@@ -19,8 +19,9 @@
 
 # Install required APT packages
 package "build-essential"
+
 if node.graylog2.email_package
-    package node.graylog2.email_package
+  package node.graylog2.email_package
 end
 
 # Install rbenv
@@ -70,7 +71,7 @@ bash "bundle install" do
   subscribes :run, resources(:link => "#{node[:graylog2][:basedir]}/web"), :immediately
 end
 
-external_hostname = node[:graylog2][:external_hostname]     ? node[:graylog2][:external_hostname] :
+external_hostname = node[:graylog2][:external_hostname]             ? node[:graylog2][:external_hostname] :
     (node.has_key?('ec2') and node.ec2.has_key?('public_hostname')) ? node[:ec2][:public_hostname] :
     (node.has_key?('ec2') and node.ec2.has_key?('public_ipv4'))     ? node[:ec2][:public_ipv4] :
     node.has_key?('fqdn')                                           ? node.fqdn :

@@ -25,8 +25,8 @@ include_recipe "apache2"
 
 # Install gem dependencies
 rbenv_gem "passenger" do
-	ruby_version "#{node[:graylog2][:ruby_version]}"
-	version "#{node[:graylog2][:passenger_version]}"
+  ruby_version "#{node[:graylog2][:ruby_version]}"
+  version "#{node[:graylog2][:passenger_version]}"
 end
 
 # Install packages to build Apache module:
