@@ -16,6 +16,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Install the Graylog2 server component by default
+# Install Elasticsearch and the Graylog2 server component by default
 
 include_recipe "graylog2::server"
